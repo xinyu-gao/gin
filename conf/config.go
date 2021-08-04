@@ -42,3 +42,7 @@ func InitConfigure() *Config {
 func (c *Config) GetServePort() string {
 	return ":" + c.config.GetString("serve.port")
 }
+
+func (c *Config) GetLogFilePath() string {
+	return c.config.GetString("log.path")
+}

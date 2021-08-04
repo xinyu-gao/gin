@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"gin/utils"
+	http "gin/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -9,9 +9,9 @@ import (
 func handleErrorRoutes(e *gin.Engine){
 	e.HandleMethodNotAllowed = true
 	e.NoMethod(func(c *gin.Context) {
-		http_result.MethodNotAllowed(c)
+		http.MethodNotAllowed(c)
 	})
 	e.NoRoute(func(c *gin.Context) {
-		http_result.NotFound(c)
+		http.NotFound(c)
 	})
 }

@@ -1,2 +1,5 @@
 serve:
   port: 8080
+
+log:
+  path: ./logs/

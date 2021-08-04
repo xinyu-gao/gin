@@ -2,8 +2,8 @@ package routers
 
 import (
 	"gin/api"
+	http "gin/utils"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 func loadUser(e *gin.Engine) {
@@ -24,9 +24,10 @@ func login(c *gin.Context) {
 	f := c.Param("aaa")
 	json := User{}
 	if err := c.BindJSON(&json); err != nil {
+		http.Error(c, "json 解析错误")
 		return
 	}
 	username := json.Username
 	passwd := json.Passwd
-	c.String(http.StatusOK, "Hello world "+username+"_"+passwd+f)
+	http.Ok(c, "Hello world "+username+"_"+passwd+f)
 }

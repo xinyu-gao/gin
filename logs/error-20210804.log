@@ -1,0 +1,1 @@
+{"client_ip":"localhost:8080","level":"error","msg":"hello","req_method":"GET","req_uri":"/user/hello","time":"4000-08-08 84:0:00","type":"业务日志"}
