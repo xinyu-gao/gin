@@ -38,7 +38,7 @@ func InitConfigure() *Config {
 	}
 }
 
-// 获取服务端口号，例如“:8080”
+// GetServePort 获取服务端口号，例如 “:8080”
 func (c *Config) GetServePort() string {
 	return ":" + c.config.GetString("serve.port")
 }
