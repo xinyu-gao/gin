@@ -1,14 +1,14 @@
 package routers
 
 import (
-	"gin/handler"
+	"gin/api"
 	"github.com/gin-gonic/gin"
 )
 
 func loadUser(e *gin.Engine) {
 	userGroup := e.Group("/user")
 	{
-		userGroup.GET("/hello", handler.HelloHandler)
-		userGroup.POST("/post", handler.PostHandler)
+		userGroup.GET("/hello", api.HelloHandler)
+		userGroup.POST("/post", api.PostHandler)
 	}
 }
