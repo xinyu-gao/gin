@@ -2,12 +2,12 @@ package api
 
 import (
 	http "gin/utils"
-	"gin/utils/log"
+	log "gin/utils"
 	"github.com/gin-gonic/gin"
 )
 
 func HelloHandler(c *gin.Context) {
-	log.Error(c, "hello")
+	log.Errors(c, "hello")
 	http.Ok(c, "hello")
 }
 

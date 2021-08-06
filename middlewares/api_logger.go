@@ -1,14 +1,14 @@
 package middlewares
 
 import (
+	"gin/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"time"
-	"gin/utils/log"
 )
 
 func LoggerMiddleware() gin.HandlerFunc {
-	logger := log.GetLogger()
+	logger := utils.GetLogger()
 	return func(c *gin.Context) {
 		startTime := time.Now()               // 开始时间
 		c.Next()                              // 处理请求

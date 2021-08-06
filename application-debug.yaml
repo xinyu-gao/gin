@@ -3,3 +3,11 @@ serve:
 
 log:
   path: ./logs/
+
+mysql:
+  username: xinyu
+  password: password
+  host: 127.0.0.1
+  port: 3303
+  dbname: test
+  timeout: 10s

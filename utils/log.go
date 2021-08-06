@@ -1,4 +1,4 @@
-package log
+package utils
 
 import (
 	"gin/conf"
@@ -11,7 +11,7 @@ import (
 
 var logger = logrus.New()
 func init() {
-	filePath := conf.InitConfigure().GetLogFilePath()
+	filePath := conf.GetLogFilePath()
 	logger.SetLevel(logrus.DebugLevel)           //设置日志级别
 	logger.SetFormatter(&logrus.JSONFormatter{}) //设置日志格式
 
@@ -60,7 +60,7 @@ func Info(c *gin.Context, msg string){
 	field(c).Info(msg)
 }
 
-func Error(c *gin.Context, msg string){
+func Errors(c *gin.Context, msg string){
 	field(c).Error(msg)
 }
 func Warn(c *gin.Context, msg string){
@@ -68,4 +68,7 @@ func Warn(c *gin.Context, msg string){
 }
 func Debug(c *gin.Context, msg string){
 	field(c).Debug(msg)
+}
+func Panic(c *gin.Context, msg string){
+	field(c).Panic(msg)
 }
