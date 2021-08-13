@@ -1,6 +1,0 @@
-{"client_ip":"localhost:8080","latency_time":3279200,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
-{"client_ip":"localhost:8080","latency_time":11008900,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
-{"client_ip":"localhost:8080","latency_time":11562700,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
-{"client_ip":"localhost:8080","latency_time":13377600,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
-{"client_ip":"localhost:8080","latency_time":12565900,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
-{"client_ip":"localhost:8080","latency_time":15417700,"level":"info","msg":"","req_method":"POST","req_uri":"/user/post","status_code":200,"time":"12000-08-08 812:0:00","type":"接口调用日志"}
