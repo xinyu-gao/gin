@@ -24,7 +24,7 @@ func LoggerMiddleware() gin.HandlerFunc {
 			"client_ip":    clientIP,
 			"req_method":   reqMethod,
 			"req_uri":      reqUri,
-			"type": "接口调用日志",
+			"type": "接口调用",
 		}).Info()
 	}
 }
