@@ -3,6 +3,7 @@ package main
 import (
 	"gin/conf"
 	m "gin/middlewares"
+	"gin/routers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +17,7 @@ func main() {
 		m.LoggerMiddleware(),
 		m.Cors(),
 	)
-	conf.LoadRouters(r)
+	routers.LoadRouters(r)
 	_ = r.Run(conf.GetServePort())
 
 }
