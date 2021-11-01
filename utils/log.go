@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"gin/conf"
+	"gin/confs"
 	"github.com/gin-gonic/gin"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
@@ -10,8 +10,9 @@ import (
 )
 
 var logger = logrus.New()
+
 func init() {
-	filePath := conf.GetLogFilePath()
+	filePath := confs.GetLogFilePath()
 	logger.SetLevel(logrus.DebugLevel)           //设置日志级别
 	logger.SetFormatter(&logrus.JSONFormatter{}) //设置日志格式
 
@@ -42,8 +43,8 @@ func init() {
 	}))
 
 }
-func GetLogger() *logrus.Logger{
-	return logger;
+func GetLogger() *logrus.Logger {
+	return logger
 }
 func field(c *gin.Context) *logrus.Entry {
 	reqMethod := c.Request.Method  // 请求方式
@@ -53,22 +54,22 @@ func field(c *gin.Context) *logrus.Entry {
 		"client_ip":  clientIP,
 		"req_method": reqMethod,
 		"req_uri":    reqUri,
-		"type": "业务日志",
+		"type":       "业务日志",
 	})
 }
-func Info(c *gin.Context, msg string){
+func Info(c *gin.Context, msg string) {
 	field(c).Info(msg)
 }
 
-func Errors(c *gin.Context, msg string){
+func Errors(c *gin.Context, msg string) {
 	field(c).Error(msg)
 }
-func Warn(c *gin.Context, msg string){
+func Warn(c *gin.Context, msg string) {
 	field(c).Warn(msg)
 }
-func Debug(c *gin.Context, msg string){
+func Debug(c *gin.Context, msg string) {
 	field(c).Debug(msg)
 }
-func Panic(c *gin.Context, msg string){
+func Panic(c *gin.Context, msg string) {
 	field(c).Panic(msg)
 }

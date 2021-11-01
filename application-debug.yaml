@@ -11,3 +11,8 @@ mysql:
   port: 3306
   dbname: test
   timeout: 10s
+
+redis:
+  addr: 101.34.248.67:6379
+  password: xinyu..
+  db: 0

@@ -1,6 +1,7 @@
-package conf
+package confs
 
 import (
+	"context"
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"github.com/gin-gonic/gin"
@@ -64,5 +65,23 @@ func GetMysqlConf() *Mysql {
 		c.config.GetString("mysql.port"),
 		c.config.GetString("mysql.dbname"),
 		c.config.GetString("mysql.timeout"),
+	}
+}
+
+func GetCtx() context.Context {
+	return context.Background()
+}
+
+type Redis struct {
+	addr string
+	password string
+	db  int
+}
+
+func GetRedisConf() *Redis {
+	return &Redis{
+		c.config.GetString("redis.addr"),
+		c.config.GetString("redis.password"),
+		c.config.GetInt("redis.db"),
 	}
 }

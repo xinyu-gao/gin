@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gin/conf"
+	"gin/confs"
 	m "gin/middlewares"
 	"gin/routers"
 	"github.com/gin-gonic/gin"
@@ -18,6 +18,5 @@ func main() {
 		m.Cors(),
 	)
 	routers.LoadRouters(r)
-	_ = r.Run(conf.GetServePort())
-
+	_ = r.Run(confs.GetServePort())
 }
