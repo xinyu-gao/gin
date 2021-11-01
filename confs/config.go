@@ -31,7 +31,8 @@ func init() {
 			panic("Config file was found but another error was produced")
 		}
 	}
-	v.WatchConfig() // 监控配置和重新获取配置
+	// 监控配置和重新获取配置
+	v.WatchConfig()
 
 	v.OnConfigChange(func(e fsnotify.Event) {
 		fmt.Println("Config file changed:", e.Name)
@@ -73,9 +74,9 @@ func GetCtx() context.Context {
 }
 
 type Redis struct {
-	addr string
+	addr     string
 	password string
-	db  int
+	db       int
 }
 
 func GetRedisConf() *Redis {

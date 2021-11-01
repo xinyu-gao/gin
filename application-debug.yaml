@@ -5,9 +5,9 @@ log:
   path: ./logs/
 
 mysql:
-  username: xinyu
-  password: xinyu
-  host: 127.0.0.1
+  username: root
+  password: xinyu..
+  host: 101.34.248.67
   port: 3306
   dbname: test
   timeout: 10s

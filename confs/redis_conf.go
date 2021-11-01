@@ -6,12 +6,12 @@ import (
 
 var _redis *redis.Client
 
-func init()  {
+func init() {
 	redisConf := GetRedisConf()
 	_redis = redis.NewClient(&redis.Options{
-		Addr:         redisConf.addr,
-		Password:     redisConf.password,
-		DB:           redisConf.db,
+		Addr:     redisConf.addr,
+		Password: redisConf.password,
+		DB:       redisConf.db,
 	})
 
 	ctx := GetCtx()
@@ -19,6 +19,7 @@ func init()  {
 	if err != nil {
 		panic("redis 连接失败：" + err.Error())
 	}
+	println("redis：" + redisConf.addr + " 连接成功")
 }
 
 func GetRedis() *redis.Client {

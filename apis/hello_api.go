@@ -8,23 +8,25 @@ import (
 )
 
 var (
-	db = confs.GetDB()
+	db    = confs.GetDB()
 	redis = confs.GetRedis()
-	ctx = confs.GetCtx()
+	ctx   = confs.GetCtx()
 )
 
-
 func HelloHandler(c *gin.Context) {
-	result := redis.Get(ctx, "id").Val()
-	http.Ok(c, interface{}(result))
+	//result := redis.Get(ctx, "id").Val()
+	users := models.SqlUser{
+		Username: "xinyu",
+	}
+	_ = db.First(&users)
+	http.Ok(c, users)
 }
 
 func PostHandler(c *gin.Context) {
-	user := models.User{
-		Name:"helloworld",
+	user := models.SqlUser{
+		Username: "xinyu",
 	}
 	_ = db.Create(&user)
 
-	http.Ok(c, user.ID)
+	http.Ok(c, user.Uid)
 }
-

@@ -21,8 +21,9 @@ func init() {
 	var err error
 	_db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		//panic("连接数据库失败, error:" + err.Error())
+		panic("连接数据库失败, error:" + err.Error())
 	}
+	println("mysql：" + sqlConf.host + ":" + sqlConf.port + " 数据库连接成功")
 	sqlDB, _ := _db.DB()
 	sqlDB.SetMaxOpenConns(100) //最大连接数
 	sqlDB.SetMaxIdleConns(20)  //最大允许的空闲连接数
