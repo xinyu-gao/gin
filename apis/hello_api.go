@@ -8,9 +8,8 @@ import (
 )
 
 var (
-	db    = confs.GetDB()
-	redis = confs.GetRedis()
-	ctx   = confs.GetCtx()
+	db         = confs.GetDB()
+	redis, ctx = confs.GetRedis()
 )
 
 func HelloHandler(c *gin.Context) {

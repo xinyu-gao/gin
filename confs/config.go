@@ -1,7 +1,6 @@
 package confs
 
 import (
-	"context"
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"github.com/gin-gonic/gin"
@@ -67,10 +66,6 @@ func GetMysqlConf() *Mysql {
 		c.config.GetString("mysql.dbname"),
 		c.config.GetString("mysql.timeout"),
 	}
-}
-
-func GetCtx() context.Context {
-	return context.Background()
 }
 
 type Redis struct {

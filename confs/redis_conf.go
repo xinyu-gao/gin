@@ -1,6 +1,7 @@
 package confs
 
 import (
+	"context"
 	"github.com/go-redis/redis/v8"
 )
 
@@ -14,7 +15,7 @@ func init() {
 		DB:       redisConf.db,
 	})
 
-	ctx := GetCtx()
+	ctx := getCtx()
 	_, err := _redis.Ping(ctx).Result()
 	if err != nil {
 		panic("redis 连接失败：" + err.Error())
@@ -22,6 +23,10 @@ func init() {
 	println("redis：" + redisConf.addr + " 连接成功")
 }
 
-func GetRedis() *redis.Client {
-	return _redis
+func GetRedis() (*redis.Client, context.Context) {
+	return _redis, getCtx()
+}
+
+func getCtx() context.Context {
+	return context.Background()
 }
