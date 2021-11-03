@@ -23,7 +23,12 @@ func Ok(c *gin.Context, data interface{}){
 		Data: data,
 	})
 }
-
+func ParamError(c *gin.Context, msg string){
+	c.JSON(OK, HttpResult{
+		Code: http.StatusBadRequest,
+		Msg: msg,
+	})
+}
 func Error(c *gin.Context, msg string){
 	c.JSON(OK, HttpResult{
 		Code: http.StatusInternalServerError,

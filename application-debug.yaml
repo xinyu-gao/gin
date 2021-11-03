@@ -9,7 +9,7 @@ mysql:
   password: xinyu..
   host: 101.34.248.67
   port: 3306
-  dbname: test
+  dbname: gin
   timeout: 10s
 
 redis:

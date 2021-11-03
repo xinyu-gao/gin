@@ -7,5 +7,6 @@ import (
 func LoadRouters(e *gin.Engine) {
 	HandleErrorRoutes(e)
 	LoadUser(e)
+	LoadHello(e)
 }
 
